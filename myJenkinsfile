@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building branch: ${env.BRANCH_NAME}"
+              echo "this is feature branch"
+                // Example: sh 'npm install' or sh 'mvn package'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing branch: ${env.BRANCH_NAME}"
+              echo "this is custom jenkins file because not able to crating two names"
+                // Example: sh 'npm test' or sh 'mvn test'
+            }
+        }
+        stage('Deploy') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo "Deploying branch: ${env.BRANCH_NAME}"
+                // Example: sh './deploy.sh'
+            }
+        }
+    }
+}
