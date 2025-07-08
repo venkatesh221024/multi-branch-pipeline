@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo "Building branch: ${env.BRANCH_NAME}"
               echo "This is testing for multi branch do build"
+                
                 // Example: sh 'npm install' or sh 'mvn package'
             }
         }
@@ -22,6 +23,7 @@ pipeline {
             }
             steps {
                 echo "Deploying branch: ${env.BRANCH_NAME}"
+                echo "this is updated one"
                 // Example: sh './deploy.sh'
             }
         }
